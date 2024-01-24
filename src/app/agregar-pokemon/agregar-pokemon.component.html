@@ -1,0 +1,62 @@
+<div class="container">
+    <h2>Agregar Pokémon</h2>
+    <form (ngSubmit)="addPokemon()" #pokemonForm="ngForm">
+      <div class="mb-3">
+        <label for="englishName" class="form-label">Nombre en inglés:</label>
+        <input type="text" class="form-control" id="englishName" [(ngModel)]="newPokemon.name.english" name="englishName" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="type" class="form-label">Tipo:</label>
+        <input type="text" class="form-control" id="type" [(ngModel)]="newPokemon.type[0]" name="type" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="hp" class="form-label">HP:</label>
+        <input type="number" class="form-control" id="hp" [(ngModel)]="newPokemon.base.HP" name="hp" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="attack" class="form-label">Ataque:</label>
+        <input type="number" class="form-control" id="attack" [(ngModel)]="newPokemon.base.Attack" name="attack" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="defense" class="form-label">Defensa:</label>
+        <input type="number" class="form-control" id="defense" [(ngModel)]="newPokemon.base.Defense" name="defense" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="spAttack" class="form-label">Ataque Especial:</label>
+        <input type="number" class="form-control" id="spAttack" [(ngModel)]="newPokemon.base['Sp. Attack']" name="spAttack" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="spDefense" class="form-label">Defensa Especial:</label>
+        <input type="number" class="form-control" id="spDefense" [(ngModel)]="newPokemon.base['Sp. Defense']" name="spDefense" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="speed" class="form-label">Velocidad:</label>
+        <input type="number" class="form-control" id="speed" [(ngModel)]="newPokemon.base.Speed" name="speed" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="sprite" class="form-label">URL de la imagen (sprite):</label>
+        <input type="text" class="form-control" id="sprite" [(ngModel)]="newPokemon.image.sprite" name="sprite" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="thumbnail" class="form-label">URL de la imagen (thumbnail):</label>
+        <input type="text" class="form-control" id="thumbnail" [(ngModel)]="newPokemon.image.thumbnail" name="thumbnail" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="hires" class="form-label">URL de la imagen (hires):</label>
+        <input type="text" class="form-control" id="hires" [(ngModel)]="newPokemon.image.hires" name="hires" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Agregar Pokémon</button>
+    </form>
+  </div>
+  

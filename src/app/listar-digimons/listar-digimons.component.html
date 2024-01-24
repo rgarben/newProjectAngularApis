@@ -1,0 +1,25 @@
+<div class="main">
+
+    <div class="list">
+  
+      <div class="card" style="width: 18rem;" *ngFor="let digimon of digimons">
+          <img src="{{digimon.img}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ digimon.name }}</h5>
+            <p class="card-text"></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ digimon.level }}</li>
+          </ul>
+          <div class="card-body">
+            <a routerLink="#" class="card-link">Card link</a>
+            <a routerLink="#" class="card-link">Another link</a>
+          </div>
+      </div>
+  
+    </div>
+    <div>
+        
+    </div>
+  
+  </div>

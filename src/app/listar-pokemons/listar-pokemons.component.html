@@ -1,0 +1,34 @@
+<div class="main">
+
+    <div class="list">
+  
+      <div class="card" style="width: 18rem;" *ngFor="let pokemon of pokemons">
+          <img src="{{pokemon.image.hires}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ pokemon.name.english }}</h5>
+            <p class="card-text"></p>
+          </div>
+          <ul class="list-group list-group-flush">
+
+            @if (pokemon.type.length>1) {
+              <li class="list-group-item" id="tipo"><img class="tipoImg" src="/assets/img/{{pokemon.type[0]}}.png" alt="">
+                                                    <img class="tipoImg" src="/assets/img/{{pokemon.type[1]}}.png" alt=""></li>
+            }@else {
+              <li class="list-group-item" id="tipo"><img class="tipoImg" src="/assets/img/{{pokemon.type}}.png" alt=""></li>
+            }
+
+            <li class="list-group-item" id="ataque">{{ pokemon.base.Attack }}</li>
+            <li class="list-group-item" id="defensa">{{ pokemon.base.Defense }}</li>
+            <li class="list-group-item" id="vida">{{ pokemon.base.HP }}</li>
+            <li class="list-group-item" id="velAtaque">{{ pokemon.base['Sp. Attack']}}</li>
+            <li class="list-group-item" id="defEspecial">{{ pokemon.base['Sp. Defense']}}</li>
+            <li class="list-group-item" id="velocidad">{{ pokemon.base.Speed}}</li>
+          </ul>
+      </div>
+  
+    </div>
+    <div>
+        
+    </div>
+  
+  </div>

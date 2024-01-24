@@ -1,0 +1,71 @@
+
+@if (personajesFiltrado.length>0) {
+  <div class="main">
+
+    <div class="list">
+  
+      <div class="card" style="width: 18rem;" *ngFor="let personaje of personajesFiltrado">
+          <img src="{{personaje.img}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ personaje.nombre }}</h5>
+            <p class="card-text"></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ personaje.vision }}</li>
+            <li class="list-group-item">{{ personaje.arma }}</li>
+            <li class="list-group-item">{{ personaje.region }}</li>
+          </ul>
+          <div class="card-body">
+            <a routerLink="#" class="card-link">Card link</a>
+            <a routerLink="#" class="card-link">Another link</a>
+          </div>
+          <div *ngIf="personajesFavoritos.indexOf(personaje) != -1; else noFav"><img class="icono" src="/assets/img/like.png" alt="fav" (click)="changeFavorites(personaje)"></div>
+          <ng-template #noFav><img class="icono" src="/assets/img/noLike.png" alt="no fav" (click)="changeFavorites(personaje)"></ng-template>
+          <a routerLink="/detalles/{{personaje.id}}"><button class="btn btn-success">Mostrar mas detalles de {{ personaje.nombre }}</button></a>
+          <a routerLink="detallesHijo/{{personaje.id}}"><button class="btn btn-success">Mostrar hijo detalles de {{ personaje.nombre }}</button></a>
+          <a routerLink="/editarPersonaje/{{personaje.id}}"><button class="btn btn-success">Editar al personaje {{ personaje.nombre }}</button></a>
+          <button class="btn btn-success" (click)="deletePerson(personaje.id)">Borrar al personaje {{ personaje.nombre }}</button>
+      </div>
+  
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+  
+  </div>
+}@else {
+  <div class="main">
+
+    <div class="list">
+  
+      <div class="card" style="width: 18rem;" *ngFor="let personaje of personajes">
+          <img src="{{personaje.img}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ personaje.nombre }}</h5>
+            <p class="card-text"></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ personaje.vision }}</li>
+            <li class="list-group-item">{{ personaje.arma }}</li>
+            <li class="list-group-item">{{ personaje.region }}</li>
+          </ul>
+          <div class="card-body">
+            <a routerLink="#" class="card-link">Card link</a>
+            <a routerLink="#" class="card-link">Another link</a>
+          </div>
+          <div *ngIf="personajesFavoritos.indexOf(personaje) != -1; else noFav"><img class="icono" src="/assets/img/like.png" alt="fav" (click)="changeFavorites(personaje)"></div>
+          <ng-template #noFav><img class="icono" src="/assets/img/noLike.png" alt="no fav" (click)="changeFavorites(personaje)"></ng-template>
+          <a routerLink="/detalles/{{personaje.id}}"><button class="btn btn-success">Mostrar mas detalles de {{ personaje.nombre }}</button></a>
+          <a routerLink="detallesHijo/{{personaje.id}}"><button class="btn btn-success">Mostrar hijo detalles de {{ personaje.nombre }}</button></a>
+          <a routerLink="/editarPersonaje/{{personaje.id}}"><button class="btn btn-success">Editar al personaje {{ personaje.nombre }}</button></a>
+          <button class="btn btn-success" (click)="deletePerson(personaje.id)">Borrar al personaje {{ personaje.nombre }}</button>
+      </div>
+  
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+  
+  </div>
+    
+}

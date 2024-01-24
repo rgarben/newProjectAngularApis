@@ -1,0 +1,50 @@
+.main{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);    
+}
+
+.list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    place-items: center;
+}
+
+
+.icono{
+    max-width: 50px;
+    max-height: 50px;
+}
+
+#tipo{
+    background-color: rgb(255, 255, 255);
+
+}
+
+.tipoImg{
+    width: 100px;
+    height: 50px;
+}
+
+#ataque{
+    background-color: rgb(240, 102, 102);
+}
+
+#defensa{
+    background-color: rgb(121, 149, 238);
+}
+
+#vida{
+    background-color: rgb(121, 238, 150);
+}
+
+#velAtaque{
+    background-color: rgb(197, 238, 121);
+}
+
+#defEspecial{
+    background-color: rgb(205, 121, 238);
+}
+
+#velocidad{
+    background-color: rgb(238, 187, 121);
+}

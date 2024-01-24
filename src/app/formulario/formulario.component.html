@@ -1,0 +1,29 @@
+<form>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" [(ngModel)]="newPersonaje.nombre" name="nombre" required>
+    </div>
+  
+    <div class="mb-3">
+      <label for="vision" class="form-label">Visión</label>
+      <input type="text" class="form-control" id="vision" [(ngModel)]="newPersonaje.vision" name="vision" required>
+    </div>
+  
+    <div class="mb-3">
+      <label for="arma" class="form-label">Arma</label>
+      <input type="text" class="form-control" id="arma" [(ngModel)]="newPersonaje.arma" name="arma" required>
+    </div>
+  
+    <div class="mb-3">
+      <label for="region" class="form-label">Región</label>
+      <input type="text" class="form-control" id="region" [(ngModel)]="newPersonaje.region" name="region" required>
+    </div>
+  
+    <div class="mb-3">
+      <label for="img" class="form-label">URL de la Imagen</label>
+      <input type="text" class="form-control" id="img" [(ngModel)]="newPersonaje.img" name="img" required>
+    </div>
+  
+    <button type="submit" class="btn btn-primary" (click)="addPersonaje()">Agregar Personaje</button>
+</form>
+  
